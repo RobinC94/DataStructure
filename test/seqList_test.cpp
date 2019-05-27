@@ -1,34 +1,16 @@
 #include "gtest/gtest.h"
 #include "seqList.h"
-#include "../src/seqList.cpp"
 
 using namespace crb_dataStructure;
 
 class SeqListTester : public seqList <int>, public testing::Test {
 protected:
     seqList <int> intList;
+    seqList <float> floatList;
     virtual void SetUp(){
         intList.insert(0, 0);
         intList.insert(1, 1);
         intList.insert(2, 2);
-    }
-
-    virtual void TearDown(){
-
-    }
-};
-
-class SeqListTesterFloat : public seqList <float>, public testing::Test {
-protected:
-    seqList <float> floatList;
-    virtual void SetUp(){
-        floatList.insert(0, 0.0f);
-        floatList.insert(1, 1.0f);
-        floatList.insert(2, 2.0f);
-    }
-
-    virtual void TearDown(){
-
     }
 };
 
@@ -39,12 +21,15 @@ TEST_F(SeqListTester, TestInsert){
     intList.insert(0, 5);
     EXPECT_EQ(intList.length(), 6);
     EXPECT_EQ(intList.visit(3), 2);
+    intList.insert(-1, 0);
+    intList.insert(10, 0);
 }
 
 TEST_F(SeqListTester, TestRemove){
     intList.remove(1);
     EXPECT_EQ(intList.length(), 2);
     EXPECT_EQ(intList.visit(1), 2);
+    intList.remove(10);
 }
 
 TEST_F(SeqListTester, TestDoubleSpace){
@@ -54,8 +39,12 @@ TEST_F(SeqListTester, TestDoubleSpace){
     EXPECT_EQ(intList.length(), 23);
 }
 
-TEST_F(SeqListTesterFloat, TestSearch){
+TEST_F(SeqListTester, TestSearch){
+    floatList.insert(0, 0.0f);
+    floatList.insert(1, 1.0f);
+    floatList.insert(2, 2.0f);
     EXPECT_EQ(floatList.search(2.0f), 2);
+    EXPECT_EQ(floatList.search(3.0f), -1);
 }
 
 GTEST_API_ int main(int argc, char ** argv) {

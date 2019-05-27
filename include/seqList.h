@@ -1,6 +1,7 @@
 #pragma once
 
-namespace crb_dataStructure {
+namespace crb_dataStructure 
+{
     template<class T>
     class seqList {
     public:
@@ -22,5 +23,7 @@ namespace crb_dataStructure {
         void doubleSpace();
     };
 }
+
+#include "../src/seqList.cpp"
 
 

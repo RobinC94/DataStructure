@@ -15,7 +15,7 @@ template <class T>
 crb_dataStructure::seqList<T>::seqList(int size)
 {
     if (size <= 0) {
-        printf("size must be positive!");
+        printf("size must be positive!\n");
         return;
     }
     data = new T[size];
@@ -27,7 +27,7 @@ template <class T>
 void crb_dataStructure::seqList<T>::insert(int i, const T &x)
 {
     if (i < 0 || i > currentLength) {
-        printf("invalid position!");
+        printf("invalid position!\n");
         return;
     }
     if (currentLength == maxSize) doubleSpace();
@@ -40,7 +40,7 @@ template <class T>
 void crb_dataStructure::seqList<T>::remove(int i)
 {
     if (i < 0 || i > currentLength) {
-        printf("invalid position!");
+        printf("invalid position!\n");
         return;
     }
     for (int j = i; j < currentLength - 1; ++j)
@@ -63,7 +63,7 @@ template <class T>
 T crb_dataStructure::seqList<T>::visit(int i) const
 {
     if (i < 0 || i > currentLength - 1) {
-        printf("invalid position!");
+        printf("invalid position!\n");
         return 0;
     }
     return data[i];
