@@ -1,9 +1,11 @@
 #pragma once
 
-namespace crb_dataStructure 
+namespace crb_dataStructure
 {
     template<class T>
     class seqList {
+        template <class Ty>
+        friend void displayList(const seqList<Ty>&);
     public:
         seqList(int size = 10);
         ~seqList() { delete[] data; }
@@ -21,7 +23,11 @@ namespace crb_dataStructure
         int maxSize;
 
         void doubleSpace();
+
     };
+
+    template <class T>
+    void displayList (const seqList<T>&);
 }
 
 #include "../src/seqList.cpp"

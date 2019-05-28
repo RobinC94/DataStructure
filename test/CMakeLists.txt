@@ -31,5 +31,7 @@ add_executable(runSeqListTest seqList_test.cpp)
 target_link_libraries(runSeqListTest gtest)
 add_executable(runSeqStackTest seqStack_test.cpp)
 target_link_libraries(runSeqStackTest gtest)
+add_executable(runSeqQueueTest seqQueue_test.cpp)
+target_link_libraries(runSeqQueueTest gtest)
 #target_link_libraries(runSeqListTest dataStructure)
 #add_test(runUnitTests runUnitTests) #included in all tutorials but I don't know what it actually does.

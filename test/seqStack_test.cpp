@@ -17,9 +17,11 @@ TEST(seqStackTester, testIntStack) {
 
 TEST(seqStackTester, testCharStack){
     seqStack <char> charStack;
+    EXPECT_TRUE(charStack.isEmpty());
     for (int i = 0; i < 26; ++i) {
         charStack.push('a'+i);
     }
+    displayStack<char>(charStack);
     EXPECT_EQ(charStack.pop(), 'z');
 }
 

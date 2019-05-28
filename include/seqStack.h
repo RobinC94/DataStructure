@@ -1,9 +1,13 @@
 #pragma once
 
-namespace crb_dataStructure 
+#include <iostream>
+
+namespace crb_dataStructure
 {
     template <class T>
     class seqStack {
+        template <class Ty>
+        friend void displayStack(const seqStack<Ty>&);
     private:
         T *data;
         int top;
@@ -27,9 +31,9 @@ namespace crb_dataStructure
             top = -1;
         }
 
-        ~seqStack() {delete [] data;}
+        ~seqStack() { delete [] data; }
 
-        bool isEmpty()const {return top == -1;}
+        bool isEmpty()const { return top == -1; }
 
         void push(const T &x)
         {
@@ -41,15 +45,31 @@ namespace crb_dataStructure
         T pop()
         {
             if(isEmpty()){
-                printf("Stack empty!!");
+                printf("Stack empty!\n");
                 return -1;
             }
             top--;
             return data[top + 1];
         }
 
-        T _top()const {return data[top];}
+        T _top()const { return data[top]; }
 
     };
+
+    template <class T>
+    void displayStack(const seqStack<T> &stack){
+        if (stack.isEmpty()) {
+            std::cout << "empty stack.\n";
+            return;
+        }
+
+        std::cout << "t: ";
+        for (int i = 0; i <= stack.top; ++i) {
+            std::cout << stack.data[i] << ',';
+            if (i % 10 == 9)
+                std::cout << "\n   ";
+        }
+        std::cout << std::endl;
+    }
 
 };

@@ -68,3 +68,33 @@ T crb_dataStructure::seqList<T>::visit(int i) const
     }
     return data[i];
 }
+
+//template <class T>
+//std::ostream& crb_dataStructure::print(std::ostream &os, const crb_dataStructure::seqList<T> &list){
+//    if (list.isEmply){
+//        os << "emply list\n";
+//        return os;
+//    }
+//    os << '[';
+//    for (int i = 0; i < list.currentLength; ++i) {
+//        os << list.data[i] << ',';
+//    }
+//    os << ']';
+//    return os;
+//}
+
+template <class T>
+void crb_dataStructure::displayList (const crb_dataStructure::seqList<T> &list){
+    if (list.length() == 0) {
+        std::cout << "empty list.\n";
+        return;
+    }
+    
+    std::cout << '[';
+    for (int i = 0; i < list.currentLength; ++i) {
+        std::cout << list.data[i] << ',';
+        if (i % 10 == 9)
+            std::cout << "\n ";
+    }
+    std::cout << ']' << std::endl;
+}
