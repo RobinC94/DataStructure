@@ -4,7 +4,7 @@ namespace crb_dataStructure {
     template <typename T>
     class linkList {
         template <typename Ty>
-        friend void displayLinkList(const linkList<Ty>&);
+        friend void displayList(const linkList<Ty>&);
 
     public:
         linkList();
@@ -33,7 +33,7 @@ namespace crb_dataStructure {
     };
 
     template <typename T>
-    void displayLinkList(const linkList<T>&);
+    void displayList(const linkList<T>&);
 }
 
 #include <../src/linkList.cpp>

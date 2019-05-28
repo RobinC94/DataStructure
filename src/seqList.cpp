@@ -64,7 +64,7 @@ T crb_dataStructure::seqList<T>::visit(int i) const
 {
     if (i < 0 || i > currentLength - 1) {
         std::cout << "invalid position!" << std::endl;
-        return 0;
+        return -1;
     }
     return data[i];
 }

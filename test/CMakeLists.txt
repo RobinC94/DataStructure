@@ -27,16 +27,7 @@ file(GLOB ALL_SRC "${SOURCE_DIR}/*.cpp")
 #add_library(dataStructure ${ALL_SRC})
 
 #set(test_SRCS ADD ALL TEST SOURCE FILES HERE)
-add_executable(runSeqListTest seqList_test.cpp)
-target_link_libraries(runSeqListTest gtest)
-add_executable(runSeqStackTest seqStack_test.cpp)
-target_link_libraries(runSeqStackTest gtest)
-add_executable(runSeqQueueTest seqQueue_test.cpp)
-target_link_libraries(runSeqQueueTest gtest)
+add_executable(runListTest list_test.cpp)
+target_link_libraries(runListTest gtest)
 
-add_executable(runLinkListTest linkList_test.cpp)
-target_link_libraries(runLinkListTest gtest)
-add_executable(runDoubleLinkListTest doubleLinkList_test.cpp)
-target_link_libraries(runDoubleLinkListTest gtest)
-#target_link_libraries(runSeqListTest dataStructure)
 #add_test(runUnitTests runUnitTests) #included in all tutorials but I don't know what it actually does.

@@ -96,20 +96,20 @@ T crb_dataStructure::doubleLinkList<T>::visit(int i) const
 }
 
 template <typename T>
-void crb_dataStructure::displayDoubleLinkList(const crb_dataStructure::doubleLinkList<T> &list)
+void crb_dataStructure::displayList(const crb_dataStructure::doubleLinkList<T> &list)
 {
     if (list.length() == 0){
         std::cout << "empty list." << std::endl;
         return;
     }
-    std::cout << "h<->";
+    std::cout << '[';
     auto *p = list.head;
     for (int i = 0; i < list.currentLength; ++i) {
         p = p -> next;
         if (p == list.tail) break;
-        std::cout << p -> data << "<->";
+        std::cout << p -> data << ',';
         if (i % 10 == 9)
-            std::cout << "\n    ";
+            std::cout << "\n ";
     }
-    std::cout << 'r' << std::endl;
+    std::cout << ']' << std::endl;
 }

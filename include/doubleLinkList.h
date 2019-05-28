@@ -6,7 +6,7 @@ namespace crb_dataStructure
     class doubleLinkList
     {
         template <typename Ty>
-        friend void displayDoubleLinkList(const doubleLinkList<Ty>&);
+        friend void displayList(const doubleLinkList<Ty>&);
     private:
         struct node{
             T data;
@@ -35,7 +35,7 @@ namespace crb_dataStructure
     };
 
     template <typename T>
-    void displayDoubleLinkList(const doubleLinkList<T>&);
+    void displayList(const doubleLinkList<T>&);
 }
 
 #include "../src/doubleLinkList.cpp"

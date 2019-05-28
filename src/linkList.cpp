@@ -80,7 +80,7 @@ T crb_dataStructure::linkList<T>::visit(int i)const
 {
     if (i < 0 || i > currentLength){
         std::cout << "invalid position!" << std::endl;
-        return;
+        return -1;
     }
     node *p = head -> next;
     for (int j = 0; j < i; ++j)
@@ -89,21 +89,21 @@ T crb_dataStructure::linkList<T>::visit(int i)const
 }
 
 template <typename T>
-void crb_dataStructure::displayLinkList(const crb_dataStructure::linkList<T> &list)
+void crb_dataStructure::displayList(const crb_dataStructure::linkList<T> &list)
 {
     if (list.length() == 0){
         std::cout << "empty list." << std::endl;
         return;
     }
-    std::cout << "h->";
+    std::cout << '[';
     auto *p = list.head;
     for (int i = 0; i < list.currentLength; ++i) {
         p = p -> next;
         if (p == NULL) break;
-        std::cout << p -> data << "->";
+        std::cout << p -> data << ',';
         if (i % 10 == 9)
-            std::cout << "\n   ";
+            std::cout << "\n ";
     }
-    std::cout << std::endl;
+    std::cout << ']' << std::endl;
 }
 
