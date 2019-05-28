@@ -21,7 +21,7 @@ TEST(seqStackTester, testCharStack){
     for (int i = 0; i < 26; ++i) {
         charStack.push('a'+i);
     }
-    displayStack<char>(charStack);
+    displayStack(charStack);
     EXPECT_EQ(charStack.pop(), 'z');
 }
 

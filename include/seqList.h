@@ -27,7 +27,8 @@ namespace crb_dataStructure
     };
 
     template <class T>
-    void displayList (const seqList<T>&);
+    void displayList(const seqList<T>&);
+    
 }
 
 #include "../src/seqList.cpp"

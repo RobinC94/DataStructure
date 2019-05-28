@@ -23,7 +23,7 @@ TEST_F(SeqListTester, TestInsert){
     EXPECT_EQ(intList.visit(3), 2);
     intList.insert(-1, 0);
     intList.insert(10, 0);
-    displayList<int>(intList);
+    displayList(intList);
 }
 
 TEST_F(SeqListTester, TestRemove){
@@ -31,7 +31,7 @@ TEST_F(SeqListTester, TestRemove){
     EXPECT_EQ(intList.length(), 2);
     EXPECT_EQ(intList.visit(1), 2);
     intList.remove(10);
-    displayList<int>(intList);
+    displayList(intList);
 }
 
 TEST_F(SeqListTester, TestDoubleSpace){
@@ -39,7 +39,7 @@ TEST_F(SeqListTester, TestDoubleSpace){
         intList.insert(0, 0);
     }
     EXPECT_EQ(intList.length(), 23);
-    displayList<int>(intList);
+    displayList(intList);
 }
 
 TEST_F(SeqListTester, TestSearch){

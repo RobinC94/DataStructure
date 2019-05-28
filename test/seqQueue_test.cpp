@@ -9,7 +9,7 @@ TEST(seqQueueTester, testDoubleQueue){
     for (double i = 0.0; i < 15; ++i) {
         doubleQueue.enQueue(i);
     }
-    displayQueue<double>(doubleQueue);
+    displayQueue(doubleQueue);
     EXPECT_EQ(doubleQueue.getHead(), 0.0);
     for (double i = 0.0; i < 5; ++i) {
         EXPECT_EQ(doubleQueue.deQueue(), i);
