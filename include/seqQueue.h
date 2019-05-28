@@ -47,6 +47,10 @@ namespace  crb_dataStructure
 
         T deQueue()
         {
+            if (isEmpty()){
+                std::cout << "Queue empty!" << std::endl;
+                return -1;
+            }
             front = (front + 1) % maxSize;
             return data[front];
         }
@@ -57,7 +61,7 @@ namespace  crb_dataStructure
     template <class T>
     void displayQueue(const seqQueue<T> &queue){
         if (queue.isEmpty()) {
-            std::cout << "empty queue.\n";
+            std::cout << "empty queue." << std::endl;
             return;
         }
 

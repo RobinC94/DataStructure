@@ -45,7 +45,7 @@ namespace crb_dataStructure
         T pop()
         {
             if(isEmpty()){
-                printf("Stack empty!\n");
+                std::cout << "Stack empty!" << std::endl;
                 return -1;
             }
             top--;
@@ -59,7 +59,7 @@ namespace crb_dataStructure
     template <class T>
     void displayStack(const seqStack<T> &stack){
         if (stack.isEmpty()) {
-            std::cout << "empty stack.\n";
+            std::cout << "empty stack." << std::endl;
             return;
         }
 
