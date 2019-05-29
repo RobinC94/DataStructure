@@ -23,9 +23,9 @@ protected:
     static doubleLinkList<double> *doubleList_;
 };
 
-seqList<int>* ListTester::intList_ = NULL;
-linkList<char>* ListTester::charList_ = NULL;
-doubleLinkList<double>* ListTester::doubleList_ = NULL;
+seqList<int>* ListTester::intList_ = nullptr;
+linkList<char>* ListTester::charList_ = nullptr;
+doubleLinkList<double>* ListTester::doubleList_ = nullptr;
 
 TEST_F(ListTester, TestInsert){
     auto &intList = *intList_;

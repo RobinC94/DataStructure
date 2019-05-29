@@ -29,5 +29,7 @@ file(GLOB ALL_SRC "${SOURCE_DIR}/*.cpp")
 #set(test_SRCS ADD ALL TEST SOURCE FILES HERE)
 add_executable(runListTest list_test.cpp)
 target_link_libraries(runListTest gtest)
+add_executable(runStackTest stack_test.cpp)
+target_link_libraries(runStackTest gtest)
 
 #add_test(runUnitTests runUnitTests) #included in all tutorials but I don't know what it actually does.
