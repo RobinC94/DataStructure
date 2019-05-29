@@ -22,9 +22,30 @@ protected:
 seqStack<int>* StackTester::intStack_ = nullptr;
 linkStack<char>* StackTester::charStack_ = nullptr;
 
-TEST_F(StackTester, TestStack){
+TEST_F(StackTester, TestPush){
     auto &intStack = *intStack_;
     auto &charStack = *charStack_;
+    EXPECT_TRUE(intStack.isEmpty());
+    EXPECT_TRUE(charStack.isEmpty());
+    for (int i = 0; i < 26; ++i) {
+        intStack.push(i);
+        charStack.push('a'+i);
+    }
+    EXPECT_EQ(intStack._top(), 25);
+    EXPECT_EQ(charStack._top(), 'z');
+}
+
+TEST_F(StackTester, TestPop){
+    auto &intStack = *intStack_;
+    auto &charStack = *charStack_;
+    for (int i = 0; i < 5; ++i) {
+        EXPECT_EQ(intStack.pop(), 25-i);
+        EXPECT_EQ(charStack.pop(), 'z'-i);
+    }
+    intStack.push(50);
+    charStack.push('0');
+    EXPECT_EQ(intStack.pop(), 50);
+    EXPECT_EQ(charStack.pop(), '0');
 }
 
 GTEST_API_ int main(int argc, char ** argv) {

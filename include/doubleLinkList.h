@@ -27,7 +27,6 @@ namespace crb_dataStructure
 
         void clear();
         int length()const { return currentLength; }
-        bool isEmpty()const { return(head -> next == tail); }
         void insert(int i, const T &x);
         void remove(int i);
         int search(const T &x);

@@ -11,7 +11,7 @@ namespace crb_dataStructure
             T data;
             node *next;
             node():next(NULL){}
-            node(const T &x, node n = NULL): data(x), next(n) {};
+            node(const T &x, node *n = NULL): data(x), next(n) {};
         };
 
         node* top;
