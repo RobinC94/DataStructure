@@ -3,14 +3,14 @@
 namespace crb_dataStructure
 {
     template <typename T>
-    class linkStack{
+    class linkStack {
         template <typename Ty>
         friend void displayStack(const linkStack<Ty>&);
     private:
         struct node{
             T data;
             node *next;
-            node():next(NULL){}
+            node(): next(NULL){}
             node(const T &x, node *n = NULL): data(x), next(n) {};
         };
 
@@ -51,7 +51,13 @@ namespace crb_dataStructure
             return x;
         }
 
-        T _top()const { return top -> data; }
+        T _top()const {
+            if (isEmpty()){
+                std::cout << "Stack empty!" << std::endl;
+                return -1;
+            }
+            return top -> data;
+        }
 
     };
 

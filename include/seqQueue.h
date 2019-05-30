@@ -55,7 +55,13 @@ namespace  crb_dataStructure
             return data[front];
         }
 
-        T getHead() { return data[(front + 1) % maxSize]; }
+        T getHead()const {
+            if (isEmpty()){
+                std::cout << "Queue empty!" << std::endl;
+                return -1;
+            }
+            return data[(front + 1) % maxSize];
+        }
     };
 
     template <class T>

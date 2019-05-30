@@ -1,6 +1,7 @@
 #pragma once
 
-namespace crb_dataStructure {
+namespace crb_dataStructure
+{
     template <typename T>
     class linkList {
         template <typename Ty>

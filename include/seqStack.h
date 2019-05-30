@@ -52,7 +52,13 @@ namespace crb_dataStructure
             return data[top + 1];
         }
 
-        T _top()const { return data[top]; }
+        T _top()const {
+            if(isEmpty()){
+                std::cout << "Stack empty!" << std::endl;
+                return -1;
+            }
+            return data[top];
+        }
 
     };
 

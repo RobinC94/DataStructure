@@ -12,7 +12,7 @@ My deployment of all common used data structures written with C++ and [google te
 | Linked List | :ballot_box_with_check: | :ballot_box_with_check: | [linkList.h](./include/linkList.h) |
 | Double Linked List | :ballot_box_with_check: | :ballot_box_with_check: | [doubleLinkList.h](./include/doubleLinkList.h) | 
 | Linked Stack | :ballot_box_with_check: | :ballot_box_with_check: | [linkStack.h](./include/linkStack.h) |
-| Linked Queue |  |  |  |
+| Linked Queue | :ballot_box_with_check: |  | [linkQueue.h](./include/linkQueue.h) |
 | Open Hash List ||||
 | Closed Hash List||||
 | Binary Tree ||||
