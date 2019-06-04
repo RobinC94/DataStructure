@@ -13,8 +13,8 @@ My deployment of all common used data structures written with C++ and [google te
 | Double Linked List | :ballot_box_with_check: | :ballot_box_with_check: | [doubleLinkList.h](./include/doubleLinkList.h) | 
 | Linked Stack | :ballot_box_with_check: | :ballot_box_with_check: | [linkStack.h](./include/linkStack.h) |
 | Linked Queue | :ballot_box_with_check: | :ballot_box_with_check: | [linkQueue.h](./include/linkQueue.h) |
-| Open Hash List ||||
-| Closed Hash List||||
+| Open Hash List | :ballot_box_with_check: | :ballot_box_with_check: | [openHashTable.h](./include/openHashTable.h) |
+| Closed Hash List| :ballot_box_with_check: | :ballot_box_with_check: | [closeHashTable.h](./include/closeHashTable.h) |
 | Binary Tree ||||
 | Binary Searching Tree ||||
 | Huffman Tree ||||
