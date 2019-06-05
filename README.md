@@ -15,8 +15,8 @@ My deployment of all common used data structures written with C++ and [google te
 | Linked Queue | :ballot_box_with_check: | :ballot_box_with_check: | [linkQueue.h](./include/linkQueue.h) |
 | Open Hash List | :ballot_box_with_check: | :ballot_box_with_check: | [openHashTable.h](./include/openHashTable.h) |
 | Closed Hash List| :ballot_box_with_check: | :ballot_box_with_check: | [closeHashTable.h](./include/closeHashTable.h) |
-| Binary Tree | :ballot_box_with_check: | :ballot_box_with_check: | [binaryTree.h](./include.binaryTree.h) |
-| Binary Searching Tree | :ballot_box_with_check: | :ballot_box_with_check: | [binarySearchTree.h](./include.binarySearchTree.h) |
+| Binary Tree | :ballot_box_with_check: | :ballot_box_with_check: | [binaryTree.h](./include/binaryTree.h) |
+| Binary Searching Tree | :ballot_box_with_check: | :ballot_box_with_check: | [binarySearchTree.h](./include/binarySearchTree.h) |
 | Huffman Tree ||||
 ||||
 
