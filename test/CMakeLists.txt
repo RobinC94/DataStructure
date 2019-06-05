@@ -35,5 +35,7 @@ add_executable(runQueueTest queue_test.cpp)
 target_link_libraries(runQueueTest gtest)
 add_executable(runHashTableTest hashTable_test.cpp)
 target_link_libraries(runHashTableTest gtest)
+add_executable(runBinaryTreeTest binaryTree_test.cpp)
+target_link_libraries(runBinaryTreeTest gtest)
 
 #add_test(runUnitTests runUnitTests) #included in all tutorials but I don't know what it actually does.

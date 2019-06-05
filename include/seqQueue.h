@@ -49,7 +49,7 @@ namespace  crb_dataStructure
         {
             if (isEmpty()){
                 std::cout << "Queue empty!" << std::endl;
-                return -1;
+                return T(-1);
             }
             front = (front + 1) % maxSize;
             return data[front];
@@ -58,7 +58,7 @@ namespace  crb_dataStructure
         T getHead()const {
             if (isEmpty()){
                 std::cout << "Queue empty!" << std::endl;
-                return -1;
+                return T(-1);
             }
             return data[(front + 1) % maxSize];
         }
