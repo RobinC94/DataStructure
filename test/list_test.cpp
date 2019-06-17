@@ -5,14 +5,15 @@
 
 using namespace crb_dataStructure;
 
-class ListTester: public testing::Test {
+class ListTester : public testing::Test {
 protected:
-    static void SetUpTestCase(){
+    static void SetUpTestCase() {
         intList_ = new seqList<int>();
         charList_ = new linkList<char>();
         doubleList_ = new doubleLinkList<double>();
     }
-    static void TearDownTestCase(){
+
+    static void TearDownTestCase() {
         delete intList_;
         delete charList_;
         delete doubleList_;
@@ -23,18 +24,18 @@ protected:
     static doubleLinkList<double> *doubleList_;
 };
 
-seqList<int>* ListTester::intList_ = nullptr;
-linkList<char>* ListTester::charList_ = nullptr;
-doubleLinkList<double>* ListTester::doubleList_ = nullptr;
+seqList<int> *ListTester::intList_ = nullptr;
+linkList<char> *ListTester::charList_ = nullptr;
+doubleLinkList<double> *ListTester::doubleList_ = nullptr;
 
-TEST_F(ListTester, TestInsert){
+TEST_F(ListTester, TestInsert) {
     auto &intList = *intList_;
     auto &charList = *charList_;
     auto &doubleList = *doubleList_;
     for (int i = 0; i < 12; ++i) {
         intList.insert(i, i);
-        charList.insert(i, 'a'+i);
-        doubleList.insert(i, 0.0+i);
+        charList.insert(i, 'a' + i);
+        doubleList.insert(i, 0.0 + i);
     }
     EXPECT_EQ(intList.length(), 12);
     EXPECT_EQ(charList.length(), 12);
@@ -47,12 +48,12 @@ TEST_F(ListTester, TestInsert){
     displayList(doubleList);
 }
 
-TEST_F(ListTester, TestRemove){
+TEST_F(ListTester, TestRemove) {
     auto &intList = *intList_;
     auto &charList = *charList_;
     auto &doubleList = *doubleList_;
     for (int i = 0; i < 3; ++i) {
-        int tmp = 10 - 2*i;
+        int tmp = 10 - 2 * i;
         intList.remove(tmp);
         charList.remove(tmp);
         doubleList.remove(tmp);
@@ -68,14 +69,14 @@ TEST_F(ListTester, TestRemove){
     displayList(doubleList);
 }
 
-TEST_F(ListTester, TestVisit){
+TEST_F(ListTester, TestVisit) {
     auto &intList = *intList_;
     auto &charList = *charList_;
     auto &doubleList = *doubleList_;
     for (int i = 0; i < 3; ++i) {
-        int tmp = 2*i;
+        int tmp = 2 * i;
         EXPECT_EQ(intList.visit(tmp), tmp);
-        EXPECT_EQ(charList.visit(tmp), 'a'+tmp);
+        EXPECT_EQ(charList.visit(tmp), 'a' + tmp);
         EXPECT_EQ(doubleList.visit(tmp), tmp);
     }
     EXPECT_EQ(intList.visit(50), -1);
@@ -95,7 +96,7 @@ TEST_F(ListTester, TestSearch) {
     EXPECT_EQ(doubleList.search(50.0), -1);
 }
 
-GTEST_API_ int main(int argc, char ** argv) {
+GTEST_API_ int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }

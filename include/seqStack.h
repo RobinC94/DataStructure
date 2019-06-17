@@ -2,49 +2,45 @@
 
 #include <iostream>
 
-namespace crb_dataStructure
-{
-    template <class T>
+namespace crb_dataStructure {
+    template<class T>
     class seqStack {
-        template <class Ty>
-        friend void displayStack(const seqStack<Ty>&);
+        template<class Ty>
+        friend void displayStack(const seqStack<Ty> &);
+
     private:
         T *data;
         int top;
         int maxSize;
 
-        void doubleSpace()
-        {
+        void doubleSpace() {
             T *tmp = data;
             data = new T[2 * maxSize];
             for (int i = 0; i < maxSize; ++i)
                 data[i] = tmp[i];
             maxSize *= 2;
-            delete [] tmp;
+            delete[] tmp;
         }
 
     public:
-        seqStack(int size = 10)
-        {
+        seqStack(int size = 10) {
             data = new T[size];
             maxSize = size;
             top = -1;
         }
 
-        ~seqStack() { delete [] data; }
+        ~seqStack() { delete[] data; }
 
-        bool isEmpty()const { return top == -1; }
+        bool isEmpty() const { return top == -1; }
 
-        void push(const T &x)
-        {
-            if(top == maxSize - 1)
+        void push(const T &x) {
+            if (top == maxSize - 1)
                 doubleSpace();
             data[++top] = x;
         }
 
-        T pop()
-        {
-            if(isEmpty()){
+        T pop() {
+            if (isEmpty()) {
                 std::cout << "Stack empty!" << std::endl;
                 return -1;
             }
@@ -52,8 +48,8 @@ namespace crb_dataStructure
             return data[top + 1];
         }
 
-        T _top()const {
-            if(isEmpty()){
+        T _top() const {
+            if (isEmpty()) {
                 std::cout << "Stack empty!" << std::endl;
                 return -1;
             }
@@ -62,8 +58,8 @@ namespace crb_dataStructure
 
     };
 
-    template <class T>
-    void displayStack(const seqStack<T> &stack){
+    template<class T>
+    void displayStack(const seqStack<T> &stack) {
         if (stack.isEmpty()) {
             std::cout << "empty stack." << std::endl;
             return;

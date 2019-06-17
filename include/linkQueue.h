@@ -59,7 +59,7 @@ namespace crb_dataStructure {
             return value;
         }
 
-        T getHead()const {
+        T getHead() const {
             if (isEmpty()) {
                 std::cout << "Queue empty!" << std::endl;
                 return -1;
@@ -68,21 +68,20 @@ namespace crb_dataStructure {
         }
     };
 
-    template <typename T>
-    void displayQueue(const linkQueue<T> &queue)
-    {
+    template<typename T>
+    void displayQueue(const linkQueue<T> &queue) {
         if (queue.isEmpty()) {
             std::cout << "empty queue." << std::endl;
             return;
         }
         auto *p = queue.front;
         std::cout << "h: ";
-        for (int i = 0; ; ++i) {
+        for (int i = 0;; ++i) {
             if (p == NULL) break;
-            std::cout << p -> data << ',';
+            std::cout << p->data << ',';
             if (i % 10 == 9)
                 std::cout << "\n   ";
-            p = p -> next;
+            p = p->next;
         }
         std::cout << " :e" << std::endl;
     }

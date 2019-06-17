@@ -1,26 +1,26 @@
 #pragma once
 
-namespace crb_dataStructure
-{
-    template <typename T>
+namespace crb_dataStructure {
+    template<typename T>
     class openHashTable {
-        template <typename Ty>
-        friend void displayHashTable(const openHashTable<Ty>&);
+        template<typename Ty>
+        friend void displayHashTable(const openHashTable<Ty> &);
 
     private:
         struct node {
             T data;
             node *next;
 
-            node(const T &x): data(x), next(NULL) {}
-            node(): data(0), next(NULL) {}
+            node(const T &x) : data(x), next(NULL) {}
+
+            node() : data(0), next(NULL) {}
         };
 
         node **array;
         int size;
 
     public:
-        int(*key)(const T &x);
+        int (*key)(const T &x);
 
         static int defaultKey(const T &k) { return int(k); }
 
@@ -30,12 +30,12 @@ namespace crb_dataStructure
 
         bool insert(const T &x);
 
-        bool find(const T &x)const ;
+        bool find(const T &x) const;
 
         bool remove(const T &x);
     };
 
-    template <typename T>
+    template<typename T>
     void displayHashTable(const openHashTable<T> &table);
 }
 

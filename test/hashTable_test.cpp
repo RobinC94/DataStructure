@@ -5,15 +5,16 @@
 using namespace crb_dataStructure;
 
 int intArray[] = {4371, 1323, 6173, 4199, 4344, 0, 9679, 1989, 1111};
-char charArray[] = {'a', '4', 'F', '/', '$', '\'', 'm', 12 , 113};
+char charArray[] = {'a', '4', 'F', '/', '$', '\'', 'm', 12, 113};
 
-class HashTableTester: public testing::Test {
+class HashTableTester : public testing::Test {
 protected:
-    static void SetUpTestCase(){
+    static void SetUpTestCase() {
         intTable_ = new openHashTable<int>;
         charTable_ = new closeHashTable<char>;
     }
-    static void TearDownTestCase(){
+
+    static void TearDownTestCase() {
         delete intTable_;
         delete charTable_;
     }
@@ -55,7 +56,7 @@ TEST_F(HashTableTester, TestRemove) {
     auto &charTable = *charTable_;
     for (int i = 0; i < 6; ++i) {
         EXPECT_TRUE(intTable.remove(intArray[i]));
-        EXPECT_TRUE(charTable.remove(charArray[7-i]));
+        EXPECT_TRUE(charTable.remove(charArray[7 - i]));
     }
     EXPECT_FALSE(intTable.find(0));
     EXPECT_TRUE(intTable.find(1111));
@@ -72,7 +73,7 @@ TEST_F(HashTableTester, TestRehash) {
     displayHashTable(charTable);
 }
 
-GTEST_API_ int main(int argc, char ** argv) {
+GTEST_API_ int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }

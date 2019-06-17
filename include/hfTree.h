@@ -1,29 +1,25 @@
 #pragma onde
 
-namespace crb_dataStructure
-{
-    template <typename T>
+namespace crb_dataStructure {
+    template<typename T>
     class hfTree {
     private:
-        struct Node
-        {
+        struct Node {
             T data;
             int weight;
             int parent, left, right;
         };
 
-        Node* elem;
+        Node *elem;
         int length;
 
     public:
-        struct hfCode
-        {
+        struct hfCode {
             T data;
             std::string code;
         };
 
-        hfTree(const T *v, const int *w, int size)
-        {
+        hfTree(const T *v, const int *w, int size) {
             const int MAX_INT = 32767;
             int min1, min2;
             int x, y;
@@ -32,19 +28,17 @@ namespace crb_dataStructure
             length = 2 * size;
             elem = new Node[length];
 
-            for(i = size; i < length; ++i)
-            {
+            for (i = size; i < length; ++i) {
                 elem[i].weight = w[i - size];
                 elem[i].data = v[i - size];
                 elem[i].parent = elem[i].left = elem[i].right = 0;
             }
 
-            for(i = size - 1; i > 0; --i)
-            {
+            for (i = size - 1; i > 0; --i) {
                 min1 = min2 = MAX_INT;
                 x = y = 0;
-                for(int j = i + 1; j < length; ++j)
-                    if(elem[j].parent == 0) {
+                for (int j = i + 1; j < length; ++j)
+                    if (elem[j].parent == 0) {
                         if (elem[j].weight < min1) {
                             min2 = min1;
                             min1 = elem[j].weight;
@@ -64,19 +58,16 @@ namespace crb_dataStructure
             }
         }
 
-        void getCode(hfCode result[])
-        {
+        void getCode(hfCode result[]) {
             int size = length / 2;
             int p, s;
-            for(int i = size; i < length; ++i)
-            {
+            for (int i = size; i < length; ++i) {
                 result[i - size].data = elem[i].data;
                 result[i - size].code = "\0";
                 p = elem[i].parent;
                 s = i;
-                while(p)
-                {
-                    if(elem[p].left == s)
+                while (p) {
+                    if (elem[p].left == s)
                         result[i - size].code = '0' + result[i - size].code;
                     else result[i - size].code = '1' + result[i - size].code;
                     s = p;
@@ -85,6 +76,6 @@ namespace crb_dataStructure
             }
         }
 
-        ~hfTree() { delete [] elem; }
+        ~hfTree() { delete[] elem; }
     };
 }

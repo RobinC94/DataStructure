@@ -1,19 +1,17 @@
 #include "seqList.h"
 #include <cstdio>
 
-template <class T>
-void crb_dataStructure::seqList<T>::doubleSpace()
-{
+template<class T>
+void crb_dataStructure::seqList<T>::doubleSpace() {
     T *tmp = data;
     maxSize *= 2;
     data = new T[maxSize];
     for (int i = 0; i < currentLength; ++i) data[i] = tmp[i];
-    delete [] tmp;
+    delete[] tmp;
 }
 
-template <class T>
-crb_dataStructure::seqList<T>::seqList(int size)
-{
+template<class T>
+crb_dataStructure::seqList<T>::seqList(int size) {
     if (size <= 0) {
         std::cout << "size must be positive!" << std::endl;
         return;
@@ -23,22 +21,20 @@ crb_dataStructure::seqList<T>::seqList(int size)
     currentLength = 0;
 }
 
-template <class T>
-void crb_dataStructure::seqList<T>::insert(int i, const T &x)
-{
+template<class T>
+void crb_dataStructure::seqList<T>::insert(int i, const T &x) {
     if (i < 0 || i > currentLength) {
         std::cout << "invalid position!" << std::endl;
         return;
     }
     if (currentLength == maxSize) doubleSpace();
-    for(int j = currentLength; j > i; --j) data[j] = data[j - 1];
+    for (int j = currentLength; j > i; --j) data[j] = data[j - 1];
     data[i] = x;
     ++currentLength;
 }
 
-template <class T>
-void crb_dataStructure::seqList<T>::remove(int i)
-{
+template<class T>
+void crb_dataStructure::seqList<T>::remove(int i) {
     if (i < 0 || i > currentLength) {
         std::cout << "invalid position!" << std::endl;
         return;
@@ -48,20 +44,18 @@ void crb_dataStructure::seqList<T>::remove(int i)
     currentLength--;
 }
 
-template <class T>
-int crb_dataStructure::seqList<T>::search(const T &x) const
-{
+template<class T>
+int crb_dataStructure::seqList<T>::search(const T &x) const {
     int i;
-    for(i = 0; i < currentLength && data[i] != x; ++i);
-    if(i == currentLength)
+    for (i = 0; i < currentLength && data[i] != x; ++i);
+    if (i == currentLength)
         return -1;
     else
         return i;
 }
 
-template <class T>
-T crb_dataStructure::seqList<T>::visit(int i) const
-{
+template<class T>
+T crb_dataStructure::seqList<T>::visit(int i) const {
     if (i < 0 || i > currentLength - 1) {
         std::cout << "invalid position!" << std::endl;
         return -1;
@@ -83,14 +77,13 @@ T crb_dataStructure::seqList<T>::visit(int i) const
 //    return os;
 //}
 
-template <class T>
-void crb_dataStructure::displayList (const crb_dataStructure::seqList<T> &list)
-{
+template<class T>
+void crb_dataStructure::displayList(const crb_dataStructure::seqList<T> &list) {
     if (list.length() == 0) {
         std::cout << "empty list." << std::endl;
         return;
     }
-    
+
     std::cout << '[';
     for (int i = 0; i < list.currentLength; ++i) {
         std::cout << list.data[i] << ',';

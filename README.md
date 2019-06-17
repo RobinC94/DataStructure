@@ -18,5 +18,9 @@ My deployment of all common used data structures written with C++ and [google te
 | Binary Tree | :ballot_box_with_check: | :ballot_box_with_check: | [binaryTree.h](./include/binaryTree.h) |
 | Binary Searching Tree | :ballot_box_with_check: | :ballot_box_with_check: | [binarySearchTree.h](./include/binarySearchTree.h) |
 | Huffman Tree | :ballot_box_with_check: | :ballot_box_with_check: | [hfTree.h](./include/hfTree.h) |
-||||
+| Graph Adjacency List |  |  |  |
+| Graph Adjacency Matrix |  |  |  |
+| Sort |  |  |  |
+| 
+
 
