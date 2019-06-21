@@ -45,4 +45,7 @@ target_link_libraries(runBinarySearchTreeTest gtest)
 add_executable(runHFTreeTest hfTree_test.cpp)
 target_link_libraries(runHFTreeTest gtest)
 
+add_executable(runMySortTest mySort_test.cpp)
+target_link_libraries(runMySortTest gtest)
+
 #add_test(runUnitTests runUnitTests) #included in all tutorials but I don't know what it actually does.
