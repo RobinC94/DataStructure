@@ -20,7 +20,7 @@ My deployment of all common used data structures written with C++ and [google te
 | Huffman Tree | :ballot_box_with_check: | :ballot_box_with_check: | [hfTree.h](./include/hfTree.h) |
 | Graph Adjacency List |  |  |  |
 | Graph Adjacency Matrix |  |  |  |
-| Sort |  |  |  |
+| Sort | :ballot_box_with_check: | :ballot_box_with_check: | [mySort.h](./include/muSort.h) |
 | 
 
 

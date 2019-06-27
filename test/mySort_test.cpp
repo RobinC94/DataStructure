@@ -45,7 +45,33 @@ TEST_F(MySortTester, TestInsertSort) {
 }
 
 TEST_F(MySortTester, TestSelectSort) {
+    mySort<int>::simpleInsertSort(intArray, 28);
+    displayArray(intArray, 28);
+    EXPECT_TRUE(ArraysMatch(result, intArray));
+}
 
+TEST_F(MySortTester, TestHeapSort) {
+    mySort<int>::heapSort(intArray, 28);
+    displayArray(intArray, 28);
+    EXPECT_TRUE(ArraysMatch(result, intArray));
+}
+
+TEST_F(MySortTester, TestBubbleSort) {
+    mySort<int>::bubbleSort(intArray, 28);
+    displayArray(intArray, 28);
+    EXPECT_TRUE(ArraysMatch(result, intArray));
+}
+
+TEST_F(MySortTester, TestMergeSort) {
+    mySort<int>::mergeSort(intArray, 28);
+    displayArray(intArray, 28);
+    EXPECT_TRUE(ArraysMatch(result, intArray));
+}
+
+TEST_F(MySortTester, TestQuickSort) {
+    mySort<int>::quickSort(intArray, 28);
+    displayArray(intArray, 28);
+    EXPECT_TRUE(ArraysMatch(result, intArray));
 }
 
 GTEST_API_ int main(int argc, char **argv) {

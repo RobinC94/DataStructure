@@ -17,6 +17,13 @@ namespace crb_dataStructure {
         static void mergeSort(T array[], int size);
 
     private:
+        static void percolateDown(T array[], int hole, int size);
+
+        static void mergeSort(T array[], int left, int right);
+
+        static void merge(T array[], int left, int mid, int right);
+
+        static void quickSort(T array[], int low, int high);
     };
 
     template<typename T>
